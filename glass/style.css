@@ -1,0 +1,237 @@
+:root {
+    --blue: rgb(99, 162, 171);
+    --dark: rgb(206, 230, 234);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue);
+    background: linear-gradient(to right top, var(--blue), var(--dark));
+    color: azure;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    max-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(99, 69, 107, 0.75);
+    background: linear-gradient(to left bottom, rgba(208, 184, 48, 0.55), rgba(156, 47, 186, 0.25) );
+    padding: 32px 80px; 
+    border-radius: 20px;
+    position: relative;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    overflow: auto;
+}
+
+.bg__img--button {
+    height: 20vh;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    right: 60%;
+    animation: slideDown 15s linear infinite;
+}
+
+.bg__img--abc {
+    height: 120vh;
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    opacity: 0.25;
+    border-radius: 100%;
+    animation: rotate 25s linear infinite;
+}
+
+.bg__img--talk {
+    height: 120vh;
+    position: absolute;
+    left: -10%;
+    opacity: 0.1;
+    top: 5%;
+}
+
+header {
+    flex: 1;
+}
+
+h1 {
+    font-size: 36px;
+    padding: 16px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 200;
+    padding: 12px;
+}
+
+.logo {
+    width:  180px;
+    margin: 25px;
+}
+
+.logo img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+.main1 {
+    display: flex;
+}
+
+section:first-child {
+    margin-right: 100px;
+}
+
+.person__img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 20px 5px 50px;
+    overflow: hidden;
+    border: solid 5px #fff;
+    border-radius: 100%;
+}
+
+.person__img img {
+    width: 100%;
+}
+
+.person__name {
+    display: block;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(to left bottom, rgb(254, 243, 176), rgb(225, 164, 241));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+}
+
+button {
+    width: 250px;
+    padding: 10px 0px;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 10px;
+    color: azure;
+    background: var(--blue);
+    background: linear-gradient(to left bottom, rgba(208, 184, 48, 0.55), rgba(156, 47, 186, 0.25));
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button:focus {
+    outline-color: #fff;
+}
+
+button:after {
+    width: 50px;
+    height: 170%;
+    position: absolute;
+    left: -70px;
+    top: -15px;
+    content: "";
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: rotate(25deg);
+    transition: transform 0.3s;
+}
+
+button:hover:after {
+    transform: translateX(340px) rotate(25deg);
+}
+
+.fb_img--button {
+    margin-bottom: -6px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.phone_icon-button {
+    margin-bottom: -6px;
+    height: 30px;
+}
+
+/* Media queries */
+
+@media (max-width: 1000px) {
+
+.body {
+    height: auto;
+    width: auto;
+}
+
+h1 {
+    font-size: 20px;
+    padding: 16px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px;
+}
+
+.main1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 100vh;
+    max-height: 100vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 0;
+}
+
+.bg__img--talk {
+    display: none;
+}
+
+.bg__img--abc {
+    display: none;
+}
+
+.section1 {
+    align-items: center;
+}
+
+section:first-child {
+    margin-right: 0px;
+}
+}
+
+/* Animations */
+
+@keyframes slideDown {
+    from {transform: translateY(-120px)}
+    to {transform: translateY(100vh)}
+}
+
+@keyframes rotate {
+    from {transform: rotate(100deg);}
+    to {transform: rotate(460deg);}
+}
+
